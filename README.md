@@ -22,7 +22,7 @@ First numbers (IP address) is where the domain will be **directed to**, the seco
 ⠀
 You should never use all blocklists! This would break most of your applications & slow down your system by a lot. Applying all lists won't give you a better browsing experience! Try to use at least lists as possible. (or use the default preset) Using big lists system wide (hosts file) is also not recommended - if you're planning to use a big list, do that via e.g. uBO (even if the list is compatible with the hosts file). Importing a list will override your current hosts!
 
-[`Hosts File Editor`](https://github.com/5Noxi/windows-dev-docs/blob/docs/hub/powertoys/hosts-file-editor.md) (PowerToys) can be used for editing, adding, removing, and managing hosts file entries. It's not compatible with the entries `Blocklist-Manager.ps1` makes, as it compresses the entries, e.g.:
+[`Hosts File Editor`](https://github.com/nohuto/windows-dev-docs/blob/docs/hub/powertoys/hosts-file-editor.md) (PowerToys) can be used for editing, adding, removing, and managing hosts file entries. It's not compatible with the entries `Blocklist-Manager.ps1` makes, as it compresses the entries, e.g.:
 ```ps
 # Default formatting
 0.0.0.0 5noxi.github.io
@@ -42,7 +42,7 @@ You should never use all blocklists! This would break most of your applications 
 ```
 It's included in PowerToys (`winget install Microsoft.PowerToys`), but doesn't need to be installed if you use `Blocklist-Manager.ps1`, unless you want to manage single entries (which is buggy anyway). I'll probably add my own editor soon that correctly handles compressed host entries.
 
-![](https://github.com/5Noxi/blocklist-mgr/blob/main/images/powertoyshosts.png)
+![](https://github.com/nohuto/blocklist-mgr/blob/main/images/powertoyshosts.png)
 
 ## Issues after importing multiple lists?
 
@@ -81,7 +81,7 @@ The presets are just examples, use lists from the vendor you prefer.
 | `Default`     | Default preset, compact size (filter).                                                                                                                                                                    |
 | `Maximum`     | For users who want aggressive blocking (filter).                                                                                                                                                          |
 | `Import`      | Imports the currently selected lists into the `hosts` file (if compatible).                                                                                                                               |
-| `Copy Links`  | Copies URLs of all selected lists. Add these links to the custom filter lists:<br>![](https://github.com/5Noxi/blocklist-mgr/blob/main/images/ubolinks.png?raw=true)       |
+| `Copy Links`  | Copies URLs of all selected lists. Add these links to the custom filter lists:<br>![](https://github.com/nohuto/blocklist-mgr/blob/main/images/ubolinks.png?raw=true)       |
 | `Restore`     | Imports the backup from: `C:\Windows\System32\drivers\etc\hosts.noverse`.                                                                                                                                 |
 | `Open File`   | Opens the file: `C:\Windows\System32\drivers\etc\hosts`.                                                                                                                                                   |
 
