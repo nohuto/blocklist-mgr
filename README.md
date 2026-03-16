@@ -22,23 +22,27 @@ First numbers (IP address) is where the domain will be **directed to**, the seco
 ⠀
 You should never use all blocklists! This would break most of your applications & slow down your system by a lot. Applying all lists won't give you a better browsing experience! Try to use at least lists as possible. (or use the default preset) Using big lists system wide (hosts file) is also not recommended - if you're planning to use a big list, do that via e.g. uBO (even if the list is compatible with the hosts file). Importing a list will override your current hosts!
 
+My suggestion is to choose a specific provider instead of using lists from different ones (if they're meant to block the same things). As you might see, I would choose hagezi at the moment.
+
+It's also recommended to apply e.g. 'Native Microsoft' seperately (without 'Pro', 'TIF', etc. so it gets written into the hosts file).
+
 [`Hosts File Editor`](https://github.com/nohuto/windows-dev-docs/blob/docs/hub/powertoys/hosts-file-editor.md) (PowerToys) can be used for editing, adding, removing, and managing hosts file entries. It's not compatible with the entries `Blocklist-Manager.ps1` makes, as it compresses the entries, e.g.:
 ```ps
 # Default formatting
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
-0.0.0.0 5noxi.github.io
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
+0.0.0.0 noverse.dev
 
 # Compressed
-0.0.0.0 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io 5noxi.github.io
+0.0.0.0 noverse.dev noverse.dev noverse.dev noverse.dev noverse.dev noverse.dev noverse.dev noverse.dev noverse.dev noverse.dev
 ```
 It's included in PowerToys (`winget install Microsoft.PowerToys`), but doesn't need to be installed if you use `Blocklist-Manager.ps1`, unless you want to manage single entries (which is buggy anyway). I'll probably add my own editor soon that correctly handles compressed host entries.
 
@@ -74,16 +78,18 @@ Default `hosts` content:
 ```
 
 ## GUI Buttons
+
 The presets are just examples, use lists from the vendor you prefer.
-| Button        | Description                                                                                                                                                                                               |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `Minimal`     | Preset, which can be used by anyone (hosts/filter).                                                                                                                                                       |
-| `Default`     | Default preset, compact size (filter).                                                                                                                                                                    |
-| `Maximum`     | For users who want aggressive blocking (filter).                                                                                                                                                          |
-| `Import`      | Imports the currently selected lists into the `hosts` file (if compatible).                                                                                                                               |
-| `Copy Links`  | Copies URLs of all selected lists. Add these links to the custom filter lists:<br>![](https://github.com/nohuto/blocklist-mgr/blob/main/images/ubolinks.png?raw=true)       |
-| `Restore`     | Imports the backup from: `C:\Windows\System32\drivers\etc\hosts.noverse`.                                                                                                                                 |
-| `Open File`   | Opens the file: `C:\Windows\System32\drivers\etc\hosts`.                                                                                                                                                   |
+
+| Button | Description |
+| --- | --- |
+| `Minimal` | Preset which can be used by anyone. |
+| `Default` | Default preset, uses Pro/TIF without adding the extra lists that aren't included in them. |
+| `Maximum` | Aggressive blocking, uses Pro++, TIF and all additional security related lists which aren't included in them (doesn't apply any protections for children). |
+| `Import` | Imports the currently selected lists into the `hosts` file (if compatible). |
+| `Copy Links` | Copies URLs of all selected lists. Add these links to the custom filter lists:<br>![](https://github.com/nohuto/blocklist-mgr/blob/main/images/ubolinks.png?raw=true) |
+| `Restore` | Imports the backup from: `C:\Windows\System32\drivers\etc\hosts.noverse`. |
+| `Open File` | Opens the file: `C:\Windows\System32\drivers\etc\hosts`. |
 
 ## Additional Features
 - Click on the category name (blue) to open the source link
@@ -93,7 +99,6 @@ The presets are just examples, use lists from the vendor you prefer.
 
 More lists/information:
 > https://github.com/gorhill/uBlock/wiki/  
-> https://github.com/yokoffing/filterlists  
 > https://adblockplus.org/filter-cheatsheet  
 > https://github.com/DandelionSprout/adfilt  
 > https://github.com/uBlockOrigin/uAssets  
