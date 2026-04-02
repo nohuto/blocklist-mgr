@@ -1,5 +1,5 @@
 #    Blocklists Modification
-#    Copyright (C) 2025 Noverse
+#    Copyright (C) 2026 Noverse
 #
 #    This program is proprietary software: you may not copy, redistribute, or modify
 #    it in any way without prior written permission from Noverse.
@@ -12,7 +12,7 @@
 #
 #    For permissions or inquiries, contact: https://discord.gg/E2ybG4j9jU
 
-$nv = "Authored by Nohuto - (C) 2025 Noverse"
+$nv = "Authored by Nohuto - (C) 2026 Noverse"
 $ErrorActionPreference = 'SilentlyContinue'
 $ProgressPreference = 'SilentlyContinue'
 $nvhosts = "C:\Windows\System32\drivers\etc\hosts"
